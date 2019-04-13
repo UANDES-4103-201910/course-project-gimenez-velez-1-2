@@ -5,22 +5,26 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+	render json: @user
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
   @post = Post.find(params[:id])
+	render json: @user
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+	render json: @user
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+	render json: @user
   end
 
   # POST /posts
@@ -37,6 +41,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+	render json: @user
   end
 
   # PATCH/PUT /posts/1
@@ -51,6 +56,7 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+	render json: @user
   end
 
   # DELETE /posts/1
@@ -61,12 +67,14 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+	render json: @user
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+	render json: @user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

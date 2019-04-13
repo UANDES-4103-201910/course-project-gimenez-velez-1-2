@@ -5,22 +5,26 @@ class DisLikedPostsController < ApplicationController
   # GET /dis_liked_posts.json
   def index
     @dis_liked_posts = DisLikedPost.all
+	render json: @user
   end
 
   # GET /dis_liked_posts/1
   # GET /dis_liked_posts/1.json
   def show
   @dis_liked_post = DisLikedPost.find(params[:id])
+	render json: @user
   end
 
   # GET /dis_liked_posts/new
   def new
     @dis_liked_post = DisLikedPost.new
+	render json: @user
   end
 
   # GET /dis_liked_posts/1/edit
   def edit
      @dis_liked_post = DisLickedPost.find(params[:id])
+	render json: @user
   end
 
   # POST /dis_liked_posts
@@ -37,6 +41,7 @@ class DisLikedPostsController < ApplicationController
         format.json { render json: @dis_liked_post.errors, status: :unprocessable_entity }
       end
     end
+	render json: @user
   end
 
   # PATCH/PUT /dis_liked_posts/1
@@ -51,6 +56,7 @@ class DisLikedPostsController < ApplicationController
         format.json { render json: @dis_liked_post.errors, status: :unprocessable_entity }
       end
     end
+	render json: @user
   end
 
   # DELETE /dis_liked_posts/1
@@ -61,12 +67,14 @@ class DisLikedPostsController < ApplicationController
       format.html { redirect_to dis_liked_posts_url, notice: 'Dis liked post was successfully destroyed.' }
       format.json { head :no_content }
     end
+	render json: @user
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dis_liked_post
       @dis_liked_post = DisLikedPost.find(params[:id])
+	render json: @user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
