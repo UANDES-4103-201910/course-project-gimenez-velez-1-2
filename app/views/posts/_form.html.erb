@@ -1,0 +1,77 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :text %>
+    <%= form.text_field :text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :geofence_id %>
+    <%= form.text_field :geofence_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apropriated %>
+    <%= form.text_field :apropriated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_open %>
+    <%= form.text_field :is_open %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_solved %>
+    <%= form.text_field :is_solved %>
+  </div>
+
+  <div class="field">
+    <%= form.label :share_counter %>
+    <%= form.text_field :share_counter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_counter %>
+    <%= form.text_field :report_counter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_hidden %>
+    <%= form.text_field :is_hidden %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_linked %>
+    <%= form.text_field :is_linked %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file_attachment %>
+    <%= form.text_field :file_attachment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

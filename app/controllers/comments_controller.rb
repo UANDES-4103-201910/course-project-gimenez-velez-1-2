@@ -5,26 +5,20 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all
-	render json: @user
   end
 
   # GET /comments/1
   # GET /comments/1.json
   def show
-  @comment = Comment.find(params[:id])
-	render json: @user
   end
 
   # GET /comments/new
   def new
     @comment = Comment.new
-	render json: @user
   end
 
   # GET /comments/1/edit
   def edit
-    @comment = Comment.find(params[:id])
-	render json: @user
   end
 
   # POST /comments
@@ -41,7 +35,6 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # PATCH/PUT /comments/1
@@ -56,7 +49,6 @@ class CommentsController < ApplicationController
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # DELETE /comments/1
@@ -67,18 +59,16 @@ class CommentsController < ApplicationController
       format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
-	render json: @user
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
-	render json: @user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:text, :creation_date, :post_id, :user_id)
+      params.require(:comment).permit(:text, :post_id, :user_id)
     end
 end
