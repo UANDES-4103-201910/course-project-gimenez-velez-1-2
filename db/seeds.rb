@@ -22,6 +22,9 @@ users = [User.new(name:'Claudio', lastname:'Alvarez', \
               password:'123423256', email:'lvarela@miuandes.cl', \
               address:'San Carlos de Apoquindo', phone: '165293845')]
 
+posts = [Post.new(text: 'I just hate it when big cars park on two parking spots', title: 'Horrible Parking'),
+         Post.new(text: 'Gas prices are rising and I cant stand it any more', title: 'Gasoline Price'),
+         Post.new(text: 'I cant believe how people text and drive', title: 'Texting Drivers'),
 for u in users do
   u.save!
 end
