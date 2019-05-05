@@ -5,25 +5,20 @@ class LikedPostsController < ApplicationController
   # GET /liked_posts.json
   def index
     @liked_posts = LikedPost.all
-	render json: @user
   end
 
   # GET /liked_posts/1
   # GET /liked_posts/1.json
   def show
-  @liked_post = LikedPost.find(params[:id])
-	render json: @user
   end
+
   # GET /liked_posts/new
   def new
     @liked_post = LikedPost.new
-	render json: @user
   end
 
   # GET /liked_posts/1/edit
   def edit
-     @liked_post = LikedPost.find(params[:id])
-	render json: @user
   end
 
   # POST /liked_posts
@@ -40,7 +35,6 @@ class LikedPostsController < ApplicationController
         format.json { render json: @liked_post.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # PATCH/PUT /liked_posts/1
@@ -55,7 +49,6 @@ class LikedPostsController < ApplicationController
         format.json { render json: @liked_post.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # DELETE /liked_posts/1
@@ -66,7 +59,6 @@ class LikedPostsController < ApplicationController
       format.html { redirect_to liked_posts_url, notice: 'Liked post was successfully destroyed.' }
       format.json { head :no_content }
     end
-	render json: @user
   end
 
   private
@@ -77,6 +69,6 @@ class LikedPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def liked_post_params
-      params.require(:liked_post).permit(:creation_date, :post_id, :user_id)
+      params.require(:liked_post).permit(:post_id, :user_id)
     end
 end

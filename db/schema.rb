@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_181504) do
+ActiveRecord::Schema.define(version: 2019_05_05_023823) do
 
   create_table "comments", force: :cascade do |t|
     t.text "text"
@@ -55,7 +55,6 @@ ActiveRecord::Schema.define(version: 2019_04_10_181504) do
     t.text "text"
     t.string "title"
     t.integer "user_id"
-    t.integer "geofence_id"
     t.boolean "apropriated"
     t.boolean "is_open"
     t.boolean "is_solved"
@@ -66,7 +65,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_181504) do
     t.boolean "file_attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["geofence_id"], name: "index_posts_on_geofence_id"
+    t.string "geofence"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

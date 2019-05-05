@@ -3,7 +3,6 @@ class Post < ApplicationRecord
   validates :text, length: { in: 1..250 }
   after_create do
    self.creation_date = Time.now
-  end 
+  end
   belongs_to :user
-	belongs_to :geofence
 end

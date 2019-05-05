@@ -5,26 +5,20 @@ class UserTypesController < ApplicationController
   # GET /user_types.json
   def index
     @user_types = UserType.all
-	render json: @user
   end
 
   # GET /user_types/1
   # GET /user_types/1.json
   def show
-  @user_type = UserType.find(params[:id])
-	render json: @user
   end
 
   # GET /user_types/new
   def new
     @user_type = UserType.new
-	render json: @user
   end
 
   # GET /user_types/1/edit
   def edit
-     @user_type = UserType.find(params[:id])
-	render json: @user
   end
 
   # POST /user_types
@@ -41,7 +35,6 @@ class UserTypesController < ApplicationController
         format.json { render json: @user_type.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # PATCH/PUT /user_types/1
@@ -56,7 +49,6 @@ class UserTypesController < ApplicationController
         format.json { render json: @user_type.errors, status: :unprocessable_entity }
       end
     end
-	render json: @user
   end
 
   # DELETE /user_types/1
@@ -67,7 +59,6 @@ class UserTypesController < ApplicationController
       format.html { redirect_to user_types_url, notice: 'User type was successfully destroyed.' }
       format.json { head :no_content }
     end
-	render json: @user
   end
 
   private

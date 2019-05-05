@@ -10,7 +10,6 @@ class GeofencesController < ApplicationController
   # GET /geofences/1
   # GET /geofences/1.json
   def show
-  @geofence = Geofence.find(params[:id])
   end
 
   # GET /geofences/new
@@ -20,7 +19,6 @@ class GeofencesController < ApplicationController
 
   # GET /geofences/1/edit
   def edit
-     @geofence = Geofence.find(params[:id])
   end
 
   # POST /geofences
