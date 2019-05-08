@@ -1,0 +1,61 @@
+.container
+{
+  width:100vw;
+  height:100vw;
+  background:linear-gradient(110deg, #11a316 60%, #0b8c0f 60%);
+}
+.column
+{
+  position:relative;
+  width:10vw;
+  margin-left:2vw;
+  margin-top:4vw;
+  float:left;
+}
+.first.column
+{
+  position:relative;
+  margin-left:31vw;
+}
+
+.input
+{
+  width:10vw;
+  margin-top:1vw;
+  height:2vw;
+  font-size:1vw;
+  cursor:pointer;
+}
+.register.text
+{
+  font-size:3vw;
+  position:absolute;
+  margin-top:1vw;
+  margin-left:42vw;
+  color:white;
+  font-weight:bold;
+}
+
+.button.register
+{
+  margin-top:2vw;
+  margin-left:5vw;
+  border-radius: 2vw;
+  font-size:1.5vw;
+  color:white;
+  font-weight:bold;
+  background-color:green;
+  width:10vw;
+  height:5vw;
+  outline:none;
+  cursor:pointer;
+}
+
+.preview
+{
+  margin-top:1vw;
+  max-width:10vw;
+  max-height:10vw;
+}
+input[type=file]{
+  background:#2d2d2d;width:130px}
