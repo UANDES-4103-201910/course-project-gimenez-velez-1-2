@@ -1,6 +1,18 @@
-<h1>Editing Post</h1>
 
-<%= render 'form', post: @post %>
+<link href="/assets/NewPostPageCss.css" media="print" rel="stylesheet" />
+<html lang="en">
+	<img class="logo"></img>
+	<div class="container">
+	
+	<div class="subcontainer">
+	<div class="upcontainer">
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+	<h1>Editing Post</h1>
+
+	<%= render 'form', post: @post %>
+
+	<%= link_to 'Show', @post %> |
+	<%= link_to 'Back', posts_path %>
+	</div>
+	</div>
+	</div>
