@@ -2,7 +2,8 @@ Gimenez-Velez
 
 Done:
 -Scaffolding for users, posts, comments, likes, user types, home, reports and dislikes
--Navigation to login, register, main page, wall, profile
+-Navigation to login, register, main page, wall and profile
+-Navigation to CRUD for user, posts, comments and likes
 -Layouts for landing page, register, login, main, wall and profile
 -Login and register page, unused by now. Redone over scaffold auto-page
 -Common stylesheet for all views
@@ -21,3 +22,6 @@ Pending:
 -Propper routing for wall and login
 -Delete dislike model and controller with respective scaffolding
 -Use of bootstrap for easier stylsheet modification
+-Showing user posts, comments and likes in wall
+-Seeds for likes and dislikes
+-Improve stylesheet sthetics
