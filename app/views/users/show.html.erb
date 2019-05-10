@@ -1,59 +1,76 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <link rel="stylesheet" type="text/css" href="ProfilePageCss.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <div class="container">
+    <img class="logo"></img>
+    <div class="subcontainer">
+      <div class="tab" onclick="location.href = '../posts'">Main Page</div>
+      <div class="tab">My Wall</div>
+      <div class="tab selected" onclick="location.href = '../ProfilePage/ProfilePageHtml.html'">Profile</div>
+      <div class="upcontainer2">
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @user.email %>
+	</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+	<p>
+	  <strong>Name:</strong>
+	  <%= @user.name %>
+	</p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastname %>
-</p>
+	<p>
+	  <strong>Lastname:</strong>
+	  <%= @user.lastname %>
+	</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+	<p>
+	  <strong>Password:</strong>
+	  <%= @user.password %>
+	</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+	<p>
+	  <strong>Address:</strong>
+	  <%= @user.address %>
+	</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+	<p>
+	  <strong>Phone:</strong>
+	  <%= @user.phone %>
+	</p>
 
-<p>
-  <strong>Profile:</strong>
-  <%= @user.profile %>
-</p>
+	<p>
+	  <strong>Profile:</strong>
+	  <%= @user.profile %>
+	</p>
 
-<p>
-  <strong>Is suspended:</strong>
-  <%= @user.is_suspended %>
-</p>
+	<p>
+	  <strong>Is suspended:</strong>
+	  <%= @user.is_suspended %>
+	</p>
 
-<p>
-  <strong>Has prev suspension:</strong>
-  <%= @user.has_prev_suspension %>
-</p>
+	<p>
+	  <strong>Has prev suspension:</strong>
+	  <%= @user.has_prev_suspension %>
+	</p>
 
-<p>
-  <strong>Is blocked:</strong>
-  <%= @user.is_blocked %>
-</p>
+	<p>
+	  <strong>Is blocked:</strong>
+	  <%= @user.is_blocked %>
+	</p>
 
-<p>
-  <strong>Geofence:</strong>
-  <%= @user.geofence_id %>
-</p>
+	<p>
+	  <strong>Geofence:</strong>
+	  <%= @user.geofence_id %>
+	</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+	</div>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,19 @@
+.upcontainer2
+{
+  background-color:#555D52;
+  height:40vw;
+  width:69vw;
+  float:left;
+  border-radius:0vw 0vw 3vw 3vw;
+	font-size:1.3vw;
+}
+.logo
+{
+  content:url(https://i.ibb.co/1TL4dSB/output-onlinepngtools.png);
+  height:20vw;
+  width:20vw;
+  position:absolute;
+  margin-top:15vw;
+  margin-left:40vw; 
+}
+
