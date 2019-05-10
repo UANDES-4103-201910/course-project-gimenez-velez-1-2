@@ -1,49 +1,59 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <link rel="stylesheet" type="text/css" href="MainPageCss.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="MainPageCss.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<img class="logo"></img>
+  <div class="container">
+    <div class="subcontainer">
+      <div class="tab selected">Posts</div>
+      <div class="tab" onclick="location.href = '../MyWallPage/MyWallPageHtml.html'">My Wall</div>
+      <div class="tab" onclick="location.href = '../ProfilePage/ProfilePageHtml.html'">Profile</div>
+      <div class="upcontainer">
+        <div class="search row">
+          <input class="search input"></input>
+          <button class="search button">Search in Groucher!</button>
+        </div>
+					<table class="posts table">
+						<thead>
+							<tr class="posts header">
+								<th class="titleH">Title</th>
+								<th class="textH">Text</th>
+								<th>User ID</th>
+								<th class="long header">Share counter</th>
+								<th class="long header">File attachment</th>
+								<th>See!</th>
+								<th>Edit!</th>
+								<th>Delete!</th>
+							</tr>
+						</thead>
 
-<h1>Posts</h1>
+						<tbody>
+							<% @posts.each do |post| %>
+								<tr>
+									<td><%= post.text %></td>
+									<td><%= post.title %></td>
+									<td><%= post.user_id%></td>
+									<td><%= post.share_counter %></td>
+									<td><%= post.file_attachment %></td>
+									<td><%= link_to 'Show', post %></td>
+									<td><%= link_to 'Edit', edit_post_path(post) %></td>
+									<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Text</th>
-      <th>Title</th>
-      <th>User</th>
-      <th>Geofence</th>
-      <th>Apropriated</th>
-      <th>Is open</th>
-      <th>Is solved</th>
-      <th>Share counter</th>
-      <th>Report counter</th>
-      <th>Is hidden</th>
-      <th>Is linked</th>
-      <th>File attachment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+					<br>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.text %></td>
-        <td><%= post.title %></td>
-        <td><%= post.user_id %></td>
-        <td><%= post.geofence %></td>
-        <td><%= post.apropriated %></td>
-        <td><%= post.is_open %></td>
-        <td><%= post.is_solved %></td>
-        <td><%= post.share_counter %></td>
-        <td><%= post.report_counter %></td>
-        <td><%= post.is_hidden %></td>
-        <td><%= post.is_linked %></td>
-        <td><%= post.file_attachment %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+					<div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
+      </div>
+    </div>
+  </div>
+</html>

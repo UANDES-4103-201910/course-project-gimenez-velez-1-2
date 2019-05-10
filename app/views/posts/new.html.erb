@@ -1,5 +1,17 @@
-<h1>New Post</h1>
+<link href="/assets/NewPostPageCss.css" media="print" rel="stylesheet" />
+<html lang="en">
+	<img class="logo"></img>
+	<div class="container">
+	
+	<div class="subcontainer">
+	<div class="upcontainer">
+	<h1>New Post</h1>
+		<%= render 'form', post: @post %>
+		<%= link_to 'Back', posts_path %>
+	</div>
+	</div>
+	</div>
+	
 
-<%= render 'form', post: @post %>
 
-<%= link_to 'Back', posts_path %>
+
