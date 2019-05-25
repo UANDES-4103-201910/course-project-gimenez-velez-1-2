@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'login/index'
   get 'home/index'
   get 'static_pages/home'
-  root to: 'home#index'
+  root to: 'login#index'
   resources :dis_liked_posts
   resources :liked_posts
   resources :reports

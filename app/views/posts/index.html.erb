@@ -1,59 +1,42 @@
 <html lang="en">
-  <link rel="stylesheet" type="text/css" href="MainPageCss.css">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="MainPageCss.css">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-	<img class="logo"></img>
-  <div class="container">
-    <div class="subcontainer">
-      <div class="tab selected">Main Page</div>
-      <div class="tab" onclick="location.href = '../liked_posts'">My Wall</div>
-      <div class="tab" onclick="location.href = '../users/2'">Profile</div>
-      <div class="upcontainer">
-        <div class="search row">
-          <input class="search input"></input>
-          <button class="search button">Search in Groucher!</button>
-        </div>
-					<table class="posts table">
-						<thead>
-							<tr class="posts header">
-								<th class="titleH">Title</th>
-								<th class="textH">Text</th>
-								<th>User ID</th>
-								<th class="long header">Share counter</th>
-								<th class="long header">File attachment</th>
-								<th>See!</th>
-								<th>Edit!</th>
-								<th>Delete!</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<% @posts.each do |post| %>
-								<tr>
-									<td><%= post.text %></td>
-									<td><%= post.title %></td>
-									<td><%= post.user_id%></td>
-									<td><%= post.share_counter %></td>
-									<td><%= post.file_attachment %></td>
-									<td><%= link_to 'Show', post %></td>
-									<td><%= link_to 'Edit', edit_post_path(post) %></td>
-									<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-								</tr>
-							<% end %>
-						</tbody>
-					</table>
-
-					<br>
-
-					<div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
-      </div>
-    </div>
+<div>
+  <div class="search row">
+    <input class="search input"></input>
+    <button class="search button">Search in Groucher!</button>
   </div>
+    <table class="table table-dark">
+      <thead>
+          <tr class="posts header">
+          <th scope="col">Title</th>
+          <th scope="col">Text</th>
+          <th scope="col">User ID</th>
+          <th scope="col">Share counter</th>
+          <th scope="col">File attachment</th>
+          <th scope="col">See!</th>
+          <th scope="col">Edit!</th>
+          <th scope="col">Delete!</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.text %></td>
+            <td><%= post.title %></td>
+            <td><%= post.user_id%></td>
+            <td><%= post.share_counter %></td>
+            <td><%= post.file_attachment %></td>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
+</div>
+</div>
 </html>

@@ -7,10 +7,11 @@
   <div class="container">
     <img class="logo"></img>
     <div class="subcontainer">
-      <div class="tab" onclick="location.href = '../posts'">Main Page</div>
-      <div class="tab" onclick="location.href = '../liked_posts'">My Wall</div>
       <div class="tab selected">Profile</div>
       <div class="upcontainer2">
+        <p><%= link_to 'Posts', posts_path %></p>
+      	<p><%= link_to 'Comments', comments_path %></p>
+      	<p><%= link_to 'Likes', liked_posts_path %></p>
 	<p id="notice"><%= notice %></p>
 
 	<p>
