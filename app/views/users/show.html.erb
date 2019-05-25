@@ -6,12 +6,15 @@
   crossorigin="anonymous"></script>
   <div class="container">
     <img class="logo"></img>
-    <div class="subcontainer">
-      <div class="tab selected">Profile</div>
-      <div class="upcontainer2">
-        <p><%= link_to 'Posts', posts_path %></p>
-      	<p><%= link_to 'Comments', comments_path %></p>
-      	<p><%= link_to 'Likes', liked_posts_path %></p>
+      <h1>Profile</h1>
+
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">My Posts</button>
+          <button type="button" class="btn btn-secondary">My Comments</button>
+          <button type="button" class="btn btn-secondary">My Likes</button>
+        </div>
+        <br>
+
 	<p id="notice"><%= notice %></p>
 
 	<p>
