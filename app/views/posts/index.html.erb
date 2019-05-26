@@ -1,15 +1,33 @@
 <html lang="en">
-<h1>Posts</h1>
-<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-<div class="input-group">
-<div class="input-group-prepend">
+<img class="logo2" onclick="location.href ='/posts/new'"></img>
+<div class="welcomeMsg lets">Let's</div>
+<div class="welcomeMsg grouch">grouch!</div>
 </div>
-<input type="text" class="form-control" placeholder="Search" aria-label="Input group example" aria-describedby="btnGroupAddon">
 </div>
-<div class="btn-group mr-2" role="group" aria-label="First group">
-<button type="button" class="btn btn-secondary">Go</button>
-</div>
-  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <table class="table table-dark">
       <thead>
           <tr class="posts header">
@@ -18,31 +36,33 @@
           <th scope="col">User ID</th>
           <th scope="col">Share counter</th>
           <th scope="col">File attachment</th>
+          <th scope="col">Upvotes</th>
+          <th scope="col">Downvotes</th>
+          <th scope="col">Comments</th>
           <th scope="col">See!</th>
           <th scope="col">Edit!</th>
           <th scope="col">Delete!</th>
         </tr>
       </thead>
-
       <tbody>
         <% @posts.each do |post| %>
           <tr>
-            <td><%= post.text %></td>
             <td><%= post.title %></td>
+            <td><%= post.text %></td>
             <td><%= post.user_id%></td>
             <td><%= post.share_counter %></td>
             <td><%= post.file_attachment %></td>
-            <td><%= link_to 'Show', post %></td>
+            <td></td>
+            <td></td>
+            <td><%= link_to 'Comment', post %></td>
+            <td><%= link_to 'Details', post %></td>
             <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-
-    <br>
-
-    <div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
 </div>
+<div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
 </div>
 </html>

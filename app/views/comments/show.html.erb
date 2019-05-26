@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
   <img class="logo"></img>
-<p>
-  <strong>Text:</strong>
-  <%= @comment.text %>
-</p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @comment.post_id %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @comment.user_id %>
-</p>
-
+  <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><strong>Post:</strong><%= @comment.post_id %></h5>
+      <p class="card-text"><strong>Creation Date:</strong></p>
+      <p class="card-text"><strong>User:</strong><%= @comment.user_id %></p>
+      <p class="card-text"><strong>Text:</strong><%= @comment.text%></p>
+    </div>
+  </div>
+<br>
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

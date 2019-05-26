@@ -5,66 +5,33 @@
 
 	<p id="notice"><%= notice %></p>
   <img class="logo"></img>
-<p>
-  <strong>Text:</strong>
-  <%= @post.text %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+	<div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
+	  <img src="..." class="card-img-top" alt="...">
+	  <div class="card-body">
+	    <h5 class="card-title"><strong>Title:</strong><%= @post.title%></h5>
+			<p class="card-text"><strong>Location:</strong></p>
+			<p class="card-text"><strong>Creation Date:</strong></p>
+	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
+	  </div>
+	    </div>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<p>
-  <strong>Geofence:</strong>
-  <%= @post.geofence %>
-</p>
-
-<p>
-  <strong>Apropriated:</strong>
-  <%= @post.apropriated %>
-</p>
-
-<p>
-  <strong>Is open:</strong>
-  <%= @post.is_open %>
-</p>
-
-<p>
-  <strong>Is solved:</strong>
-  <%= @post.is_solved %>
-</p>
-
-<p>
-  <strong>Share counter:</strong>
-  <%= @post.share_counter %>
-</p>
-
-<p>
-  <strong>Report counter:</strong>
-  <%= @post.report_counter %>
-</p>
-
-<p>
-  <strong>Is hidden:</strong>
-  <%= @post.is_hidden %>
-</p>
-
-<p>
-  <strong>Is linked:</strong>
-  <%= @post.is_linked %>
-</p>
-
-<p>
-  <strong>File attachment:</strong>
-  <%= @post.file_attachment %>
-</p>
-
+			<button type="button" class="btn text-white bg-dark mb-3">
+			  Comment <span class="badge badge-light">4</span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+			  Upvote <span class="badge badge-light">4</span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+			  Downvote <span class="badge badge-light">4</span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+			  Follow <span class="badge badge-light">4</span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+			  Flag <span class="badge badge-light">4</span>
+			</button>
+<br>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 
