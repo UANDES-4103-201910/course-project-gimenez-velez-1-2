@@ -5,8 +5,6 @@ class User < ApplicationRecord
   validates :phone, length: { in: 8..12 }
   #belongs_to :geofence
 	has_many :comments
-	has_many :liked_posts
-	has_many :dis_liked_posts
 	has_many :posts
 
 end

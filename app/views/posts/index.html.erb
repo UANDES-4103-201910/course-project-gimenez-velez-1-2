@@ -2,14 +2,6 @@
 <img class="logo2" onclick="location.href ='/posts/new'"></img>
 <div class="welcomeMsg lets">Let's</div>
 <div class="welcomeMsg grouch">grouch!</div>
-</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -34,14 +26,11 @@
           <th scope="col">Title</th>
           <th scope="col">Text</th>
           <th scope="col">User ID</th>
-          <th scope="col">Share counter</th>
-          <th scope="col">File attachment</th>
+          <th scope="col">Follows</th>
           <th scope="col">Upvotes</th>
           <th scope="col">Downvotes</th>
           <th scope="col">Comments</th>
-          <th scope="col">See!</th>
-          <th scope="col">Edit!</th>
-          <th scope="col">Delete!</th>
+          <th scope="col">View</th>
         </tr>
       </thead>
       <tbody>
@@ -51,18 +40,14 @@
             <td><%= post.text %></td>
             <td><%= post.user_id%></td>
             <td><%= post.share_counter %></td>
-            <td><%= post.file_attachment %></td>
             <td></td>
             <td></td>
-            <td><%= link_to 'Comment', post %></td>
+            <td><%= link_to 'Comment', new_comment_path %></td>
             <td><%= link_to 'Details', post %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
-</div>
+<br>
 <div class="link newpost"><%= link_to 'Create NEW POST!!!', new_post_path %></div>
-</div>
 </html>

@@ -10,14 +10,15 @@
 	  <img src="..." class="card-img-top" alt="...">
 	  <div class="card-body">
 	    <h5 class="card-title"><strong>Title:</strong><%= @post.title%></h5>
+			<p class="link newuser"><strong>Publisher:</strong><%= link_to 'View Profile', user_path %></p>
 			<p class="card-text"><strong>Location:</strong></p>
-			<p class="card-text"><strong>Creation Date:</strong></p>
+			<p class="card-text"><strong>Creation Date:</strong><%= @post.creation_date%></p>
 	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
 	  </div>
 	    </div>
 
 			<button type="button" class="btn text-white bg-dark mb-3">
-			  Comment <span class="badge badge-light">4</span>
+			  <%= link_to 'Comment', new_comment_path %> <span class="badge badge-light">4</span>
 			</button>
 			<button type="button" class="btn text-white bg-dark mb-3">
 			  Upvote <span class="badge badge-light">4</span>
@@ -32,8 +33,10 @@
 			  Flag <span class="badge badge-light">4</span>
 			</button>
 <br>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Delete', edit_post_path, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', post_path %>
 
 	</div>
 	</div>
