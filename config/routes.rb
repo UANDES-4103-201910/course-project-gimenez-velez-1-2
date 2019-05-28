@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth' }
   get 'login/index'
   get 'home/index'
   get 'static_pages/home'
-  root to: 'login#index'
+  root to: 'posts#index'
   resources :dis_liked_posts
   resources :liked_posts
   resources :reports

@@ -11,6 +11,13 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.3.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+#devise
+gem 'devise'
+#google auth2
+gem 'omniauth-google-oauth2'
+gem 'omniauth'
+#active record sessions
+gem 'activerecord-session_store'
 #jquery
 gem 'jquery-rails'
 # Use Puma as the app server
@@ -58,6 +65,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv'
 end
 
 group :test do

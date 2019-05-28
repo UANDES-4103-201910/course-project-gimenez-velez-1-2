@@ -25,3 +25,5 @@ Pending:
 -Showing user posts, comments and likes in wall
 -Seeds for likes and dislikes
 -Improve stylesheet sthetics
+
+#dotenv rails server
