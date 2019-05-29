@@ -1,5 +1,6 @@
-Gimenez-Velez
+Gimenez-Velez course project
 
+Assignment 2
 Done:
 -Scaffolding for users, posts, comments, likes, user types, home, reports and dislikes
 -Navigation to login, register, main page, wall and profile
@@ -21,9 +22,33 @@ Pending:
 -Scaffold for login and wall
 -Propper routing for wall and login
 -Delete dislike model and controller with respective scaffolding
--Use of bootstrap for easier stylsheet modification
+-Use of bootstrap for easier stylesheet modification
 -Showing user posts, comments and likes in wall
 -Seeds for likes and dislikes
 -Improve stylesheet sthetics
 
-#dotenv rails server
+Assignment 3
+Note: to access server use following command (in stead of rails s): dotenv rails server
+
+Done:
+-System Access (points a, b and c)
+-Registration (points a, b and c)
+-User Administration (points a, b.i, c and d)
+-System Administration ()
+-User Profile (points a and b)
+-Posts (points a.i and g)
+-Comments ()
+-User Search ()
+
+Pending:
+-User Administration (point b.ii)
+-System Administration (points a, b, c and d)
+-User Profile (point c)
+-Posts (points a.ii, a.iii, a.iv, a.v, b, c, d, e, f and h)
+-Comments (points a, b c and d)
+-User Search (points a and b)
+
+Bugs:
+-login backround is not Showing
+-back button for post details view not working
+-
