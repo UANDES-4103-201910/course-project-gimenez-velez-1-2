@@ -14,3 +14,33 @@
  *= require_self
  */
  @import "bootstrap";
+ .small-logo
+ {
+   content:url(https://i.ibb.co/1TL4dSB/output-onlinepngtools.png);
+   height:50px;
+   width:50px;
+ }
+ .navbar-brand:hover>.small-logo
+ {
+   -webkit-box-shadow: 0px 0px 15px 9px rgba(255,0,0,0.97);
+ -moz-box-shadow: 0px 0px 15px 9px rgba(255,0,0,0.97);
+ box-shadow: 0px 0px 15px 9px rgba(255,0,0,0.97);
+ }
+ .logoutLink
+ {
+   all:unset;
+   font-size: 15px;
+   color:gray;
+ }
+ .logoutLink:hover
+ {
+   all:unset;
+   font-size: 15px;
+   color:white;
+ }
+ .logout:visited
+ {
+   all:unset;
+   font-size: 15px;
+   color:gray;
+ }

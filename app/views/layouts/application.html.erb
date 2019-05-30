@@ -30,13 +30,13 @@
             <%=link_to "Profile", user_path(current_user), class: 'nav-link' %>
 
         </li>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0" style="float:left">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="margin-left:70px">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
         </form>
       </ul>
         <a class="text-muted"> Welcome <%= current_user.name %> <%= current_user.lastname %> &nbsp --> &nbsp </a>
-          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:'logoutLink' %>
       <% end %>
     </div>
   </nav>
