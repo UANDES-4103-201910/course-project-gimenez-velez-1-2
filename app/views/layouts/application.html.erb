@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CourseProjectGimenezVelez12</title>
+    <title>Groucher™</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -32,8 +32,8 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </ul>
-        <a class="text-muted"> Welcome <%= current_user.name %> <%= current_user.lastname %></a>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <a class="text-muted"> Welcome <%= current_user.name %> <%= current_user.lastname %> &nbsp --> &nbsp </a>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
       <% end %>
     </div>
   </nav>
