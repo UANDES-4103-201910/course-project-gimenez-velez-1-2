@@ -5,4 +5,5 @@ class Post < ApplicationRecord
    self.creation_date = Time.now
   end
   belongs_to :user
+  has_many_attached :images
 end

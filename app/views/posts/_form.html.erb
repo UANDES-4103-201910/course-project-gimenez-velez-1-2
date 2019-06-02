@@ -17,10 +17,7 @@
   <div class="form-group">
     <%= form.text_area :text, placeholder:"Write your grouch here!", class:"form-control", rows:7%>
   </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="file">
-    <label class="custom-file-label" for="customFile">Choose file</label>
-  </div>
+  <%= form.file_field :images, multiple: true %>
   <div class="actions">
     <%= form.submit %>
   </div>

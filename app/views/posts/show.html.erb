@@ -2,7 +2,9 @@
 
 	<p id="notice"><%= notice %></p>
 	<div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
-	  <img src="..." class="card-img-top" alt="...">
+	    <% (0...@post.images.count).each do |image| %>
+			<%= image_tag(@post.images[image]) %>
+			<% end %>
 	  <div class="card-body">
 	    <h5 class="card-title"><strong>Title:</strong><%= @post.title%></h5>
 			<p class="link newuser"><strong>Publisher:</strong><%= link_to [@post.user.name, @post.user.lastname].reject(&:blank?).join(' '), user_path(@post.user_id) %></p>
