@@ -15,5 +15,5 @@ class User < ApplicationRecord
     end
 	has_many :comments
 	has_many :posts
-
+  has_one_attached :image
 end
