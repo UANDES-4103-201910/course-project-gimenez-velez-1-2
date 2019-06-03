@@ -11,7 +11,6 @@
           <th scope="col">Follows</th>
           <th scope="col">Upvotes</th>
           <th scope="col">Downvotes</th>
-          <th scope="col">Comments</th>
           <th scope="col">View</th>
         </tr>
       </thead>
@@ -24,7 +23,6 @@
             <td><%= post.share_counter %></td>
             <td></td>
             <td></td>
-            <td><%= link_to 'Comment', new_comment_path %></td>
             <td><%= link_to 'Details', post %></td>
           </tr>
         <% end %>

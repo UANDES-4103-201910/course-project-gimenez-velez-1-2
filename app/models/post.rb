@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_one_attached :file_attachment
+  has_many :comment
 end
