@@ -7,8 +7,9 @@
           <tr class="posts header">
           <th scope="col">Title</th>
           <th scope="col">Text</th>
-          <th scope="col">User ID</th>
-          <th scope="col">Follows</th>
+          <th scope="col">User</th>
+          <th scope="col">Shared</th>
+          <th scope="col">Comments</th>
           <th scope="col">Upvotes</th>
           <th scope="col">Downvotes</th>
           <th scope="col">View</th>
@@ -19,8 +20,9 @@
           <tr>
             <td><%= post.title %></td>
             <td><%= post.text %></td>
-            <td><%= post.user_id%></td>
+            <td><%= User.find(post.user_id).name%></td>
             <td><%= post.share_counter %></td>
+            <td><%= Comment.where(post_id:post.id).count%></td>
             <td></td>
             <td></td>
             <td><%= link_to 'Details', post %></td>
