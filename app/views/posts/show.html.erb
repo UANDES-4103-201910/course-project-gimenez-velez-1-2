@@ -17,20 +17,43 @@
 			<button type="button" class="btn text-white bg-dark mb-3">
 			  <%= link_to 'Comment', new_comment_path %> <span class="badge badge-light">4</span>
 			</button>
-			<button type="button" class="btn text-white bg-dark mb-3">
-			  Upvote <span class="badge badge-light">4</span>
+			<button onclick ="upvote()" type="button" class="btn text-white bg-dark mb-3">
+			  Upvote <span id='upvote' class="badge badge-light">0</span>
 			</button>
-			<button type="button" class="btn text-white bg-dark mb-3">
-			  Downvote <span class="badge badge-light">4</span>
+			<button onclick ="downvote()" type="button" class="btn text-white bg-dark mb-3">
+			  Downvote <span id='downvote' class="badge badge-light">0</span>
 			</button>
-			<button type="button" class="btn text-white bg-dark mb-3">
-			  Follow <span class="badge badge-light">4</span>
+			<button onclick ="follow()" type="button" class="btn text-white bg-dark mb-3">
+			  Follow <span id='follow' class="badge badge-light">0</span>
 			</button>
-			<button type="button" class="btn text-white bg-dark mb-3">
-			  Flag <span class="badge badge-light">4</span>
+			<button onclick ="flag()" type="button" class="btn text-white bg-dark mb-3">
+			  Flag <span id='flag' class="badge badge-light">0</span>
 			</button>
+
+			<script type="text/javascript">
+				function upvote(){
+					var a = document.getElementById('upvote').innerHTML
+					a++;
+					document.getElementById('upvote').innerHTML = a;
+			}
+			function downvote(){
+				var b = document.getElementById('downvote').innerHTML
+				b++
+				document.getElementById('downvote').innerHTML = b;
+		}
+		function follow(){
+			var c = document.getElementById('follow').innerHTML
+			c++;
+			document.getElementById('follow').innerHTML = c;
+	}
+	function flag(){
+		var d = document.getElementById('flag').innerHTML
+		d++;
+		document.getElementById('flag').innerHTML = d;
+}
+			</script>
 <br>
-<%= link_to 'View File', @post.file_attachment if @post.file_attachment.attached? %> 
+<%= link_to 'View File', @post.file_attachment if @post.file_attachment.attached? %>
 <br>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Delete', edit_post_path, method: :delete, data: { confirm: 'Are you sure?' } %> |

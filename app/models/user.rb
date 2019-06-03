@@ -13,6 +13,15 @@ class User < ApplicationRecord
         user.skip_confirmation!
       end
     end
+
+    def self.search(search)
+      if search
+        find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      else
+        find(:all)
+      end
+    end
+
 	has_many :comments
 	has_many :posts
   has_one_attached :image

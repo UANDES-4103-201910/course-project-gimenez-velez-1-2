@@ -36,7 +36,7 @@ Done:
 -User Administration (points a, b.i, c and d)
 -System Administration ()
 -User Profile (points a and b)
--Posts (points a.i and g)
+-Posts (points a.i, iv, v and g)
 -Comments ()
 -User Search ()
 
@@ -44,11 +44,12 @@ Pending:
 -User Administration (point b.ii)
 -System Administration (points a, b, c and d)
 -User Profile (point c)
--Posts (points a.ii, a.iii, a.iv, a.v, b, c, d, e, f and h)
+-Posts (points a.ii, a.iii, b, c, d, e, f and h)
 -Comments (points a, b c and d)
 -User Search (points a and b)
+-User email confirmation pending for email login and forgot password
+-One click for each action per person (upvote, downvote, follow and flag) and saving counter in db
 
 Bugs:
--login backround is not Showing
 -back button for post details view not working
--
+-cant edit profile if logged in with google auth due to no password input
