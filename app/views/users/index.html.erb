@@ -20,13 +20,16 @@
         <td><%= user.email %></td>
         <td><%= user.last_sign_in_at %></td>
         <td><%= link_to 'Show', user %></td>
+        <%if current_user.admin%>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<%if current_user.admin%>
 <div class="link newuser"><%= link_to 'Create NEW User', new_user_path %></div>
+<% end %>
