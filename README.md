@@ -53,3 +53,29 @@ Pending:
 Bugs:
 -back button for post details view not working
 -cant edit profile if logged in with google auth due to no password input
+
+Assignment 4
+
+Done:
+-System Access (points a, b and c)
+-Registration (points a, b and c)
+-User Administration (points a, b.i, c and d)
+-System Administration ()
+-User Profile (points a and b)
+-Posts (points a.i, iv, v and g)
+-Comments ()
+-AUP and ToS (points a)
+-Post Search()
+-User Search ()
+
+Pending:
+-User Administration (point b.ii)
+-System Administration (points a, b, c and d)
+-User Profile (point c)
+-Posts (points a.ii, a.iii, b, c, d, e, f and h)
+-Comments (points a, b c and d)
+-AUP and ToS (point b)
+-Post Search (points a and b)
+-User Search (points a and b)
+
+Bugs:
