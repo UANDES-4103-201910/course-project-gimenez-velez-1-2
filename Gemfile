@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
 #sprockets
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+#letteropener
+gem "letter_opener", :group => :development
 #bootstrap
 gem 'bootstrap', '~> 4.3.1'
 # Use sqlite3 as the database for Active Record
