@@ -55,10 +55,8 @@ ActiveRecord::Schema.define(version: 2019_06_05_171829) do
   end
 
   create_table "geofences", force: :cascade do |t|
-    t.string "name"
+    t.string "area"
     t.string "country"
-    t.decimal "latitude"
-    t.decimal "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -124,7 +122,7 @@ ActiveRecord::Schema.define(version: 2019_06_05_171829) do
     t.string "lastname"
     t.string "address"
     t.integer "phone"
-    t.string "profile"
+    t.text "profile"
     t.boolean "is_suspended"
     t.boolean "has_prev_suspension"
     t.boolean "is_blocked"

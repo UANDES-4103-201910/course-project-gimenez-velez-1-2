@@ -3,7 +3,14 @@
   <div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
 	    <% Comment.where(post_id:@post.id).each do |comment| %>
 			<p class="card-text">
-			<%= [User.find(comment.user_id).name, User.find(comment.user_id).lastname,": ",comment.text].reject(&:blank?).join(' ') %>
+			<%= link_to User.find(comment.user_id).name,user_path(comment.user_id)%> <%= link_to User.find(comment.user_id).lastname,user_path(comment.user_id) %>
+      <br>
+      <%= comment.text%>
+      <br>
+      <%= time_ago_in_words(comment.created_at) %>
+      <br>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 			</p>
 			<% end %>
 			<div><strong>New comment:</strong></div>
