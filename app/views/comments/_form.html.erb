@@ -1,19 +1,15 @@
-<%= form_with(model: comment, local: true) do |form| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+<%= form_for([@post,@post.comment.build]) do |form| %>
 
-      <ul>
-      <% comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Write your comment here"></textarea>
-  </div>
+  <div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
+	    <% Comment.where(post_id:@post.id).each do |comment| %>
+			<p class="card-text">
+			<%= [User.find(comment.user_id).name, User.find(comment.user_id).lastname,": ",comment.text].reject(&:blank?).join(' ') %>
+			</p>
+			<% end %>
+			<div><strong>New comment:</strong></div>
+			<%= form.text_area :text, placeholder:"Write your comment here", class:"form-control", rows:3%>
+			<button>comment</button>
+	  </div>
 
   <div class="actions">
     <%= form.submit %>

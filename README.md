@@ -55,27 +55,28 @@ Bugs:
 -cant edit profile if logged in with google auth due to no password input
 
 Assignment 4
+Note: to access server use following command (in stead of rails s): dotenv rails server
 
 Done:
 -System Access (points a, b and c)
 -Registration (points a, b and c)
--User Administration (points a, b.i, c and d)
--System Administration ()
+-User Administration (points b, and d)
+-System Administration (points b.i and d)
 -User Profile (points a and b)
--Posts (points a.i, iv, v and g)
+-Posts (points a.i, iv, v, b, c and g)
 -Comments ()
 -AUP and ToS (points a)
 -Post Search()
 -User Search ()
 
 Pending:
--User Administration (point b.ii)
--System Administration (points a, b, c and d)
--User Profile (point c)
+-User Administration (points a and c)
+-System Administration (points a, b.ii, c, e, f, g, h, i, j)
+-User Profile (points c and d)
 -Posts (points a.ii, a.iii, b, c, d, e, f and h)
 -Comments (points a, b c and d)
 -AUP and ToS (point b)
 -Post Search (points a and b)
 -User Search (points a and b)
 
-Bugs:
+Bugs: profile doesn show image and bio

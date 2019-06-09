@@ -7,12 +7,24 @@ Rails.application.routes.draw do
   resources :dis_liked_posts
   resources :liked_posts
   resources :reports
-  resources :comments
-  resources :posts
   resources :geofences
   resources :user_types
-  resources :users
 
+  resources :users do
+    resources :posts do
+      resources :comments
+      resources :reports
+      resources :dis_liked_posts
+      resources :liked_posts
+    end
+  end
+
+  resources :posts do
+    resources :comments
+    resources :reports
+    resources :dis_liked_posts
+    resources :liked_posts
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

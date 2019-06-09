@@ -12,25 +12,13 @@
 	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
 	  </div>
 	</div>
-
-
-	<div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
-			<p class"card-body"><strong>Comments:</strong></p>
-	    <% Comment.where(post_id:@post.id).each do |comment| %>
-			<p class="card-text">
-			<%= [User.find(comment.user_id).name, User.find(comment.user_id).lastname,": ",comment.text].reject(&:blank?).join(' ') %>
-			</p>
-			<% end %>
-			<div><strong>New comment:</strong></div>
-			<textarea id="commentInput" cols="24" rows="6"></textarea>
-			<button>comment</button>
-
-
-	  </div>
 	</div>
 
+
+	<%= render 'comments/form'%>
+
 			<button type="button" class="btn text-white bg-dark mb-3">
-			  <%= link_to 'Comment', new_comment_path %> <span class="badge badge-light">4</span>
+ 			<%=@post.comment.count%> Comments
 			</button>
 			<button onclick ="upvote()" type="button" class="btn text-white bg-dark mb-3">
 			  Upvote <span id='upvote' class="badge badge-light">0</span>
