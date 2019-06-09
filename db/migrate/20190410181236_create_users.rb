@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       #t.string :password
       t.string :address
       t.integer :phone
-      t.text :profile
+      t.string :profile
       t.boolean :is_suspended
       t.boolean :has_prev_suspension
       t.boolean :is_blocked

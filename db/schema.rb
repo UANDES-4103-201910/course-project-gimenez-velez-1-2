@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 2019_06_05_171829) do
     t.string "lastname"
     t.string "address"
     t.integer "phone"
-    t.text "profile"
+    t.string "profile"
     t.boolean "is_suspended"
     t.boolean "has_prev_suspension"
     t.boolean "is_blocked"

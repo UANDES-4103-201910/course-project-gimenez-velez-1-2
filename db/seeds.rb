@@ -8,7 +8,7 @@
 
 users = [User.new(name:'Claudio', lastname:'Alvarez', \
               password:'123422312', email:'calvarez1@miuandes.cl', \
-              address:'San Carlos de Apoquindo', phone: '178293845'),
+              address:'San Carlos de Apoquindo', phone: '178293845',profile:"best teacher lalos"),
          User.new(name:'Juan', lastname:'Rataplan', \
               password:'123434234', email:'jrataplan@miuandes.cl', \
               address:'San Carlos de Apoquindo',phone: '178293846'),
