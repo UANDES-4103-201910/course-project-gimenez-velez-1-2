@@ -13,12 +13,11 @@
 	  </div>
 		<div style="background-color:black;width:100%;font-size:20px">
 			<strong>Comments:</strong>
-			<img style="float:right" src="https://www.freeiconspng.com/uploads/free-youtube-dislike-pictures-15.png" width="30" class="Dislike" /></img>
+			<img onclick=alert("dislike_clicked") style="float:right" src="https://www.freeiconspng.com/uploads/free-youtube-dislike-pictures-15.png" width="30" class="Dislike" /></img>
 			&nbsp &nbsp
-			<img style="float:right;" src="https://pngimage.net/wp-content/uploads/2018/06/youtube-like-button-png-1.png" width="30" class="Like" /></img>
+			<img onclick=alert("like_clicked") style="float:right;" src="https://pngimage.net/wp-content/uploads/2018/06/youtube-like-button-png-1.png" width="30" class="Like" /></img>
 
 		</div>
-
 
 
 	<%= render 'comments/form'%>
