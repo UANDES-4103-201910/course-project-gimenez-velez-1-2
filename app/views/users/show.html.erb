@@ -19,8 +19,7 @@
   <div class="card text-white bg-dark mb-3" style="width: 30rem;">
     <div class="card-body">
       <% if @user.image.attached? %>
-        <img src=@user.image></img>
-        <%= image_tag(@user.image)%>
+        <%= image_tag(@user.image, :style => "max-width:180px") %>
       <%end%>
       <h5 class="card-title"><%= @user.name %>&nbsp<%= @user.lastname %></h5>
       <p class="card-text"><strong>Email:</strong><%= @user.email %></p>
