@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <link rel="icon" href="https://i.ibb.co/1TL4dSB/output-onlinepngtools.png">
   <head>
-    <title>Groucher Official Page</title>
+    <title>Groucher™</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +11,7 @@
   <% if user_signed_in? %>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/posts" style="font-size:20px">
-    <image class="small-logo" style="border-radius:100px"> Groucher
+    <image class="small-logo" style="border-radius:100px"> Groucher™
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -62,4 +63,15 @@
       <% end %>
     <%= yield %>
   </body>
+  <br>
+  <br>
+  <br>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom" >
+    <ul class="navbar-nav ml-auto" style="color:white;font-size:10px">
+      Groucher™ 2019 &nbsp
+      <a style="color:white;" href="https://www.termsofusegenerator.net/live.php?token=8irFopXUdemNtHKlJ4Ux5PeUG5IN5pnr">Terms of Use</a>
+      &nbsp|&nbsp
+      <a style="color:white;" href="https://www.termsofservicegenerator.net/live.php?token=OrjG4Rwbb73MVG4wAEh8Xs9lPlE121eI">Terms of Service</a>
+    </ul>
+  </nav>
 </html>
