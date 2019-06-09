@@ -11,8 +11,13 @@
 			<p class="card-text"><strong>Creation Date:</strong><%= @post.creation_date%></p>
 	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
 	  </div>
-	</div>
+		<div style="background-color:black;width:100%">
+			<img style="float:right" src="https://pngimage.net/wp-content/uploads/2018/06/youtube-like-button-png-1.png" width="30" alt="Like" /></img>
+			&nbsp &nbsp
+			<img style="float:right" src="https://www.freeiconspng.com/uploads/free-youtube-dislike-pictures-15.png" width="30" alt="Dislike" /></img>
 
+		</div>
+	</div>
 
 	<%= render 'comments/form'%>
 
