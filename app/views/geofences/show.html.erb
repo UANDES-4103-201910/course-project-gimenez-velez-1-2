@@ -17,6 +17,9 @@
   <%= @geofence.longitude %>
 </p>
 
+<div style="height:100%; width: 100%;">
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@geofence.latitude},#{@geofence.longitude}&key=#{"AIzaSyDUGWDj3cvb_07402WucXIgcZK4IKBjzKg"}", alt: "Map"%>
+</div>
 
 
 <%= link_to 'Edit', edit_geofence_path(@geofence) %> |
