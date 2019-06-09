@@ -7,7 +7,6 @@
       <h1>Profile</h1>
 
           <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn text-white bg-dark mb-3"><%= link_to 'My Posts', user_post_path %></button>
           <button type="button" class="btn text-white bg-dark mb-3"><%= link_to 'My Comments', post_path %></button>
           <button type="button" class="btn text-white bg-dark mb-3"><%= link_to 'My Likes', post_path %></button>
           <button type="button" class="btn text-white bg-dark mb-3"><%= link_to 'Following', post_path %></button>
@@ -19,9 +18,10 @@
 
   <div class="card text-white bg-dark mb-3" style="width: 30rem;">
     <div class="card-body">
-      <% if user.image.attached? %>
-	    <%= image_tag(@user.image)%>
-	<%end>
+      <% if @user.image.attached? %>
+        <img src=@user.image></img>
+        <%= image_tag(@user.image)%>
+      <%end%>
       <h5 class="card-title"><%= @user.name %>&nbsp<%= @user.lastname %></h5>
       <p class="card-text"><strong>Email:</strong><%= @user.email %></p>
       <p class="card-text"><strong>Address:</strong><%= @user.address %></p>
