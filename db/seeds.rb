@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+geofences=[Geofence.new(name:"Buckingham Palace", latitude: "51.501564",longitude: "-0.141944"),
+Geofence.new(name:"algun lado", latitude: "5.501564",longitude: "-15.141944"),
+Geofence.new(name:"x place", latitude: "1.501564",longitude: "-3.141944")]
+for g in geofences do
+  g.save!
+end
 users = [User.new(name:'Claudio', lastname:'Alvarez', \
               password:'123422312', email:'calvarez1@miuandes.cl', \
               address:'San Carlos de Apoquindo', phone: '178293845',profile:"best teacher lalos"),

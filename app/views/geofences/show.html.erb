@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Area:</strong>
-  <%= @geofence.area %>
+  <strong>Name:</strong>
+  <%= @geofence.name %>
 </p>
-
 <p>
   <strong>Country:</strong>
   <%= @geofence.country %>
 </p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @geofence.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @geofence.longitude %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_geofence_path(@geofence) %> |
 <%= link_to 'Back', geofences_path %>
