@@ -6,6 +6,7 @@ class Users::OmniauthController < Devise::RegistrationsController
     if @user.persisted?
       @user.name = auth["info"]["first_name"]
       @user.lastname = auth["info"]["last_name"]
+      @user.password = auth["info"]["password"]
       @user.save
       sign_in_and_redirect @user
       flash[:notice] = 'Su cuenta de Google ha sido registrada exitosamente.'
