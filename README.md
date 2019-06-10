@@ -79,4 +79,4 @@ Pending:
 -Post Search (points a and b)
 -User Search (points a and b)
 
-Bugs: profile doesn show image and bio
+Bugs: profile doesn show image and bio [SOLVED]
