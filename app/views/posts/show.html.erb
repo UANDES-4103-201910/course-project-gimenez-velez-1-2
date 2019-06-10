@@ -24,7 +24,7 @@
 	</div>
 
 			<button type="button" class="btn text-white bg-dark mb-3">
- 			<%=@post.comment.count%> Comments
+				Comments <span id='Comments' class="badge badge-light"><%=@post.comment.count%></span>
 			</button>
 			<button onclick ="upvote()" type="button" class="btn text-white bg-dark mb-3">
 			  Upvote <span id='upvote' class="badge badge-light">0</span>
