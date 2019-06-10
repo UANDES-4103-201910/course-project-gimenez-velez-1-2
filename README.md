@@ -21,14 +21,14 @@ Pending:
 -Creating login and wall controller and model classes
 -Scaffold for login and wall
 -Propper routing for wall and login
--Delete dislike model and controller with respective scaffolding
--Use of bootstrap for easier stylesheet modification
+-Delete dislike model and controller with respective scaffolding [DONE]
+-Use of bootstrap for easier stylesheet modification[DONE]
 -Showing user posts, comments and likes in wall
--Seeds for likes and dislikes
--Improve stylesheet sthetics
+-Seeds for likes and dislikes [unnecessary, like dislike system fixed 100%]
+-Improve stylesheet sthetics [DONE]
 
 Assignment 3
-Note: to access server use following command (in stead of rails s): dotenv rails server
+[IMPORTANT] Note: to access server use following command (in stead of rails s): dotenv rails server [IMPORTANT]
 
 Done:
 -System Access (points a, b and c)
@@ -48,14 +48,14 @@ Pending:
 -Comments (points a, b c and d)
 -User Search (points a and b)
 -User email confirmation pending for email login and forgot password
--One click for each action per person (upvote, downvote, follow and flag) and saving counter in db
+-One click for each action per person (upvote, downvote, follow and flag) and saving counter in db [Done for like/dislike]
 
 Bugs:
 -back button for post details view not working
--cant edit profile if logged in with google auth due to no password input
+-cant edit profile if logged in with google auth due to no password input[solved]
 
 Assignment 4
-Note: to access server use following command (in stead of rails s): dotenv rails server
+[IMPORTANT]Note: to access server use following command (in stead of rails s): dotenv rails server[IMPORTANT]
 
 Done:
 -System Access (points a, b and c)
@@ -68,6 +68,7 @@ Done:
 -AUP and ToS (points a)
 -Post Search()
 -User Search ()
+-Google maps Api applyied to geofence/show and post/new, only problem its that we dont want to pay for google service
 
 Pending:
 -User Administration (points a and c)
