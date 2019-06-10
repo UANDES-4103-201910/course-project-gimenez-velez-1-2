@@ -44,16 +44,6 @@ ActiveRecord::Schema.define(version: 2019_06_05_171829) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "dis_liked_posts", force: :cascade do |t|
-    t.date "creation_date"
-    t.integer "post_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_dis_liked_posts_on_post_id"
-    t.index ["user_id"], name: "index_dis_liked_posts_on_user_id"
-  end
-
   create_table "geofences", force: :cascade do |t|
     t.string "name"
     t.string "country"
@@ -67,6 +57,7 @@ ActiveRecord::Schema.define(version: 2019_06_05_171829) do
     t.date "creation_date"
     t.integer "post_id"
     t.integer "user_id"
+    t.boolean "positive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_liked_posts_on_post_id"

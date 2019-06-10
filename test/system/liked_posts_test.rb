@@ -14,8 +14,6 @@ class LikedPostsTest < ApplicationSystemTestCase
     visit liked_posts_url
     click_on "New Liked Post"
 
-    fill_in "Post", with: @liked_post.post_id
-    fill_in "User", with: @liked_post.user_id
     click_on "Create Liked post"
 
     assert_text "Liked post was successfully created"
@@ -26,8 +24,6 @@ class LikedPostsTest < ApplicationSystemTestCase
     visit liked_posts_url
     click_on "Edit", match: :first
 
-    fill_in "Post", with: @liked_post.post_id
-    fill_in "User", with: @liked_post.user_id
     click_on "Update Liked post"
 
     assert_text "Liked post was successfully updated"

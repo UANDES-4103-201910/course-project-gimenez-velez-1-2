@@ -12,10 +12,9 @@
 	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
 	  </div>
 		<div style="background-color:black;width:100%;font-size:20px">
-			<strong>Comments:</strong>
-			<img onclick=alert("dislike_clicked") style="float:right" src="https://www.freeiconspng.com/uploads/free-youtube-dislike-pictures-15.png" width="30" class="Dislike" /></img>
-			&nbsp &nbsp
-			<img onclick=alert("like_clicked") style="float:right;" src="https://pngimage.net/wp-content/uploads/2018/06/youtube-like-button-png-1.png" width="30" class="Like" /></img>
+			<strong style="position:absolute">Comments:</strong>
+			<%= render 'liked_posts/form2' %>
+			<%= render 'liked_posts/form' %>
 
 		</div>
 
@@ -26,12 +25,13 @@
 			<button type="button" class="btn text-white bg-dark mb-3">
 				Comments <span id='Comments' class="badge badge-light"><%=@post.comment.count%></span>
 			</button>
-			<button onclick ="upvote()" type="button" class="btn text-white bg-dark mb-3">
-			  Upvote <span id='upvote' class="badge badge-light">0</span>
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Likes <span id='Upvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:true).count%></span>
 			</button>
-			<button onclick ="downvote()" type="button" class="btn text-white bg-dark mb-3">
-			  Downvote <span id='downvote' class="badge badge-light">0</span>
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Dislikes <span id='downvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:false).count%></span>
 			</button>
+
 			<button onclick ="follow()" type="button" class="btn text-white bg-dark mb-3">
 			  Follow <span id='follow' class="badge badge-light">0</span>
 			</button>

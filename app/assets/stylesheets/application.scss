@@ -46,7 +46,9 @@
  }
  .Like
  {
-    border-radius:100%
+   float:right;
+   border-radius:100%;
+   border:none
  }
  .Like:hover
  {
@@ -54,7 +56,9 @@
  }
  .Dislike
  {
-    border-radius:100%
+   float:right;
+   border-radius:100%;
+   border:none
  }
  .Dislike:hover
  {

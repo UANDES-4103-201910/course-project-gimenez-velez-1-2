@@ -10,8 +10,8 @@
           <th scope="col">User</th>
           <th scope="col">Shared</th>
           <th scope="col">Comments</th>
-          <th scope="col">Upvotes</th>
-          <th scope="col">Downvotes</th>
+          <th scope="col">Likes</th>
+          <th scope="col">Dislikes</th>
           <th scope="col">View</th>
         </tr>
       </thead>
@@ -23,8 +23,8 @@
             <td><%= User.find(post.user_id).name%></td>
             <td><%= post.share_counter %></td>
             <td><%= Comment.where(post_id:post.id).count%></td>
-            <td></td>
-            <td></td>
+            <td><%= LikedPost.where(post_id:post.id,positive:true).count%></td>
+            <td><%= LikedPost.where(post_id:post.id,positive:false).count%></td>
             <td><%= link_to 'Details', post %></td>
           </tr>
         <% end %>

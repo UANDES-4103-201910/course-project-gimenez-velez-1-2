@@ -1,0 +1,7 @@
+<%= form_for([@post,@post.liked_posts.build]) do |form| %>
+<!-- No sacar signo = a los hidden field a  pesar que no es visible, sino no funciona-->
+<%= form.hidden_field :user_id,value:current_user.id%>
+<%= form.hidden_field :post_id,value:@post.id%>
+<%= form.hidden_field :positive,value:true%>
+    <input type="image" src="https://pngimage.net/wp-content/uploads/2018/06/youtube-like-button-png-1.png" width="30" class="Like" />
+<%end%>

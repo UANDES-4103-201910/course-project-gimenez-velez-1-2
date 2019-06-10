@@ -17,7 +17,7 @@ class LikedPostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create liked_post" do
     assert_difference('LikedPost.count') do
-      post liked_posts_url, params: { liked_post: { post_id: @liked_post.post_id, user_id: @liked_post.user_id } }
+      post liked_posts_url, params: { liked_post: {  } }
     end
 
     assert_redirected_to liked_post_url(LikedPost.last)
@@ -34,7 +34,7 @@ class LikedPostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update liked_post" do
-    patch liked_post_url(@liked_post), params: { liked_post: { post_id: @liked_post.post_id, user_id: @liked_post.user_id } }
+    patch liked_post_url(@liked_post), params: { liked_post: {  } }
     assert_redirected_to liked_post_url(@liked_post)
   end
 
