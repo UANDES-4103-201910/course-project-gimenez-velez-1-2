@@ -9,4 +9,5 @@ class Post < ApplicationRecord
   has_one_attached :file_attachment
   has_many :comment
   has_many :liked_posts
+  has_many :report
 end

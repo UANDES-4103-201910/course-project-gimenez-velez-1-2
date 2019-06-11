@@ -24,12 +24,14 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
-    @report = Report.new(report_params)
+    @post =Post.find(params[:post_id])
+    @report = @post.report.build(report_params)
+    @report.user_id = current_user.id
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
-        format.json { render :show, status: :created, location: @report }
+        format.html { redirect_to post_path(@post), notice: 'post been flagged' }
+        format.json { render :show, status: :created, location: post_path(@post) }
       else
         format.html { render :new }
         format.json { render json: @report.errors, status: :unprocessable_entity }
