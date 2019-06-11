@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     #@users = User.search(params[:search])
   end
 
+  def search
+    debugger
+    @q = "%#{params[:query]}"
+    @users=User.where("name LIKE ? or lastname LIKE ?",@q,@q)
+    render 'index'
+  end
   # GET /users/1
   # GET /users/1.json
   def show
@@ -70,6 +76,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :name, :lastname, :password, :address, :phone,:profile, :is_suspended, :has_prev_suspension, :is_blocked, :geofence_id, :image)
+      params.require(:user).permit(:email, :name, :lastname, :password, :address, :phone,:profile, :is_suspended, :has_prev_suspension, :is_blocked, :geofence_id, :image, :admin)
     end
 end

@@ -41,10 +41,7 @@
     <%= form.text_field :phone %>
   </div>
 
-  <div class="field">
-    <%= form.label :profile %>
-    <%= form.text_area :profile %>
-  </div>
+
 
   <div class="field">
     <%= form.label :image %>
@@ -53,15 +50,22 @@
 
 
   <div class="custom-control custom-switch">
-  <input onclick ="toggle()" type="checkbox" class="custom-control-input" id="customSwitch1">
-  <label class="custom-control-label" for="customSwitch1">Toggle this switch to give the user administrator priviledges</label>
+  <% if current_user.admin %>
+    <!--input onclick ="toggle()" type="checkbox" class="custom-control-input" id="customSwitch1">
+    <label class="custom-control-label" for="customSwitch1">Toggle this switch to give the user administrator priviledges</label-->
+    <div class="field">
+      <%= form.label :admin %>
+      <%= form.check_box :admin %>
+    </div>
+  <% end %>
   </div>
 
-<script type="text/javascript">
-  function toggle(){
-    @user.admin=true;
-}
-</script>
+  <script type="text/javascript">
+    function toggle(){
+      @user.admin=true;
+      @user.save;
+  }
+  </script>
 
   <div class="actions">
     <%= form.submit %>
