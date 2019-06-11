@@ -81,3 +81,5 @@ Pending:
 -User Search (points a and b)
 
 Bugs: profile doesn show image and bio [SOLVED]
+
+Assignment 4- On time submission 10/06
