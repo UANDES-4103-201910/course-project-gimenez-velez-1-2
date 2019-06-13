@@ -3,7 +3,7 @@
   <div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
 	    <% Comment.where(post_id:@post.id).each do |comment| %>
 			<p class="card-text">
-			<%= link_to User.find(comment.user_id).name,user_path(comment.user_id)%> <%= link_to User.find(comment.user_id).lastname,user_path(comment.user_id) %>
+			<%= link_to User.find(comment.user_id).name+" "+User.find(comment.user_id).lastname,user_path(comment.user_id)%>
       <br>
       <%= comment.text%>
       <br>
