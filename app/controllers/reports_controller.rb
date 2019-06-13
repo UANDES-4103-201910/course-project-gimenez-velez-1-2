@@ -27,14 +27,15 @@ class ReportsController < ApplicationController
     @post =Post.find(params[:post_id])
     @report = @post.report.build(report_params)
     @report.user_id = current_user.id
-
-    respond_to do |format|
-      if @report.save
-        format.html { redirect_to post_path(@post), notice: 'post been flagged' }
-        format.json { render :show, status: :created, location: post_path(@post) }
-      else
-        format.html { render :new }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+    if Report.where(user_id:@report.user_id,post_id:@report.post_id).count<1
+      respond_to do |format|
+        if @report.save
+          format.html { redirect_to post_path(@post), notice: 'post been flagged' }
+          format.json { render :show, status: :created, location: post_path(@post) }
+        else
+          format.html { render :new }
+          format.json { render json: @report.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
