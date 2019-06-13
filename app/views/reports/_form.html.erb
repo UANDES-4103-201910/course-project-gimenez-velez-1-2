@@ -1,9 +1,10 @@
 <%= form_for([@post,@post.report.build]) do |form| %>
-  <%= form.text_field :text, placeholder: "Report reason"%>
-  <%= form.hidden_field :user_id,value:current_user.id%>
-  <%= form.hidden_field :post_id,value:@post.id%>
+
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.select :text, ['Harassment', 'Racism','Threats','Pornography','App Misuse','Sensitive Information','Commercial Trading','Scam']%>
+    <%= form.hidden_field :user_id,value:current_user.id%>
+    <%= form.hidden_field :post_id,value:@post.id%>
+    <%= form.submit%>
   </div>
 <% end %>
