@@ -10,4 +10,5 @@ class Post < ApplicationRecord
   has_many :comment
   has_many :liked_posts
   has_many :report
+  has_many :tags
 end

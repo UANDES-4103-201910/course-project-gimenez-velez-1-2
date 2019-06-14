@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :geofences
   resources :user_types
   resources :comments
+  resources :tags
 
   resources :users do
     resources :posts do
@@ -20,13 +21,14 @@ Rails.application.routes.draw do
       resources :reports
       resources :dis_liked_posts
       resources :liked_posts
+      resources :tags
     end
   end
 
   resources :posts do
     resources :comments
     resources :reports
-    resources :dis_liked_posts
+    resources :tags
     resources :liked_posts
   end
 

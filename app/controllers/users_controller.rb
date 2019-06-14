@@ -19,7 +19,10 @@ class UsersController < ApplicationController
   def show
     @upvotes = LikedPost.where(:user_id => @user.id)
     @comments =Comment.where(:user_id => @user.id)
-    @activities = @upvotes.to_a.concat(@comments).sort_by(&:created_at).reverse!
+    @shareda=Tag.where(user_id: @user.id)
+    @sharedb=Tag.where(sharer: @user.id)
+    @shared=@shareda.to_a.concat(@sharedb)
+    @activities = @upvotes.to_a.concat(@comments.to_a.concat(@shared)).sort_by(&:created_at).reverse!
   end
 
   # GET /users/new

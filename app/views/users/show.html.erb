@@ -42,9 +42,15 @@
               <% else %>
                 <p><%= @user.name %> disliked  <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
               <% end %>
-            <% else %>
-                <p><%= @user.name %> commented  <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
-                <% end %>
+            <% elsif activity.is_a? Comment %>
+              <p><%= @user.name %> commented  <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+            <% elsif activity.is_a? Tag%>
+              <%if activity.sharer==@user.id.to_s%>
+                <p><%= @user.name %> shared <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> with <%= link_to activity.user.name,user_path(activity.user_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+              <%else%>
+                <p><%= link_to User.find(activity.sharer).name,user_path(activity.sharer) %> shared <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> with <%= @user.name %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+              <%end%>
+            <%end%>
           <%end%>
         </div>
       </div>
