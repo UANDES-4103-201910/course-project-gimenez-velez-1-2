@@ -10,6 +10,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "letter_opener", :group => :development
 #bootstrap
 gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 #devise
@@ -42,7 +43,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Datatables for searchable and paginateable Datatables
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-datatables-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
