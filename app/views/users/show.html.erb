@@ -32,18 +32,22 @@
       </div>
       <!-- User Activity -->
       <br>
-      <h2> <%= @user.name %>'s Activity </h2>
-      <% @activities.each do |activity| %>
-        <% if activity.is_a? LikedPost %>
-          <% if activity.positive %>
-            <p><%= @user.name %> upvoted <%= link_to 'post '+activity.post_id.to_s, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
-          <% else %>
-            <p><%= @user.name %> downvoted  <%= link_to ' post '+activity.post_id.to_s, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
-          <% end %>
-        <% else %>
-            <p><%= @user.name %> commented  <%= link_to ' post '+activity.post_id.to_s, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
-            <% end %>
-      <%end%>
+      <div class="card text-white bg-dark mb-3" style="width: 30rem;">
+        <div class="card-body">
+          <h2> <%= @user.name %>'s Activity </h2>
+          <% @activities.each do |activity| %>
+            <% if activity.is_a? LikedPost %>
+              <% if activity.positive %>
+                <p><%= @user.name %> liked <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+              <% else %>
+                <p><%= @user.name %> disliked  <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+              <% end %>
+            <% else %>
+                <p><%= @user.name %> commented  <%= link_to Post.find(activity.post_id).title, post_path(activity.post_id) %> (<%=time_ago_in_words(activity.created_at)%> ago)</p>
+                <% end %>
+          <%end%>
+        </div>
+      </div>
 
 
     </div>
