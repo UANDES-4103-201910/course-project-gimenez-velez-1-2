@@ -9,6 +9,7 @@
           <th scope="col">Text</th>
           <th scope="col">User</th>
           <th scope="col">Shared</th>
+          <th scope="col">Flagged</th>
           <th scope="col">Comments</th>
           <th scope="col">Likes</th>
           <th scope="col">Dislikes</th>
@@ -22,6 +23,7 @@
             <td><%= post.text %></td>
             <td><%= User.find(post.user_id).name%></td>
             <td><%= Tag.where(post_id:post.id).count %></td>
+            <td><%= Report.where(post_id:post.id).count %></td>
             <td><%= Comment.where(post_id:post.id).count%></td>
             <td><%= LikedPost.where(post_id:post.id,positive:true).count%></td>
             <td><%= LikedPost.where(post_id:post.id,positive:false).count%></td>
