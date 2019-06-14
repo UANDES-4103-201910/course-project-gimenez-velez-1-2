@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @upvotes = LikedPost.where(:user_id => @user.id)
+    @comments =Comment.where(:user_id => @user.id)
+    @activities = @upvotes.to_a.concat(@comments).sort_by(&:created_at).reverse!
   end
 
   # GET /users/new

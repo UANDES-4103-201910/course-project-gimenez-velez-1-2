@@ -1,0 +1,74 @@
+<html lang="en">
+	<p id="notice"><%= notice %></p>
+	<div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
+	    <% (0...@post.images.count).each do |image| %>
+			<%= image_tag(@post.images[image]) %>
+			<% end %>
+	  <div class="card-body">
+	    <p class="card-title"><strong>Title:</strong><%= @post.title%></p>
+			<p class="link newuser"><strong>Publisher:</strong><%= link_to [@post.user.name, @post.user.lastname].reject(&:blank?).join(' '), user_path(@post.user_id) %></p>
+			<p class="card-text"><strong>Location:</strong></p>
+			<p class="card-text"><strong>Creation Date:</strong><%= @post.creation_date%></p>
+	    <p class="card-text"><strong>Description:</strong><%= @post.text%></p>
+			<br>
+			<br>
+			<strong>Flag as inappropriate!<%= render 'reports/form' %></strong>
+	  </div>
+		<div style="background-color:black;width:100%;font-size:20px">
+			<strong style="position:absolute">Comments:</strong>
+			<%= render 'liked_posts/form2' %>
+			<%= render 'liked_posts/form' %>
+
+		</div>
+
+
+	<%= render 'comments/form'%>
+	</div>
+
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Comments <span id='Comments' class="badge badge-light"><%=@post.comment.count%></span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Likes <span id='Upvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:true).count%></span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Dislikes <span id='downvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:false).count%></span>
+			</button>
+
+			<button onclick ="follow()" type="button" class="btn text-white bg-dark mb-3">
+			  Follow <span id='follow' class="badge badge-light">0</span>
+			</button>
+			<button type="button" class="btn text-white bg-dark mb-3">
+				Flags <span id='Flags' class="badge badge-light"><%=@post.report.count%></span>
+			</button>
+
+			<script type="text/javascript">
+				function upvote(){
+					var a = document.getElementById('upvote').innerHTML
+					a++;
+					document.getElementById('upvote').innerHTML = a;
+			}
+			function downvote(){
+				var b = document.getElementById('downvote').innerHTML
+				b++
+				document.getElementById('downvote').innerHTML = b;
+		}
+		function follow(){
+			var c = document.getElementById('follow').innerHTML
+			c++;
+			document.getElementById('follow').innerHTML = c;
+	}
+	function flag(){
+		var d = document.getElementById('flag').innerHTML
+		d++;
+		document.getElementById('flag').innerHTML = d;
+}
+			</script>
+<br>
+<%= link_to 'View File', @post.file_attachment if @post.file_attachment.attached? %>
+<br>
+<%if current_user.admin%>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%end%>
+<%= link_to 'Back', "/posts" %>
