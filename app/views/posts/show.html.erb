@@ -1,5 +1,4 @@
 <html lang="en">
-	<p id="notice"><%= notice %></p>
 	<div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
 	    <% (0...@post.images.count).each do |image| %>
 			<%= image_tag(@post.images[image]) %>
@@ -42,30 +41,8 @@
 				Flags <span id='Flags' class="badge badge-light"><%=@post.report.count%></span>
 			</button>
 
-			<script type="text/javascript">
-				function upvote(){
-					var a = document.getElementById('upvote').innerHTML
-					a++;
-					document.getElementById('upvote').innerHTML = a;
-			}
-			function downvote(){
-				var b = document.getElementById('downvote').innerHTML
-				b++
-				document.getElementById('downvote').innerHTML = b;
-		}
-		function follow(){
-			var c = document.getElementById('follow').innerHTML
-			c++;
-			document.getElementById('follow').innerHTML = c;
-	}
-	function flag(){
-		var d = document.getElementById('flag').innerHTML
-		d++;
-		document.getElementById('flag').innerHTML = d;
-}
-			</script>
 <br>
-<%= link_to 'View File', @post.file_attachment if @post.file_attachment.attached? %>
+<%= link_to 'Download File', @post.file_attachment if @post.file_attachment.attached? %>
 <br>
 <%if current_user.admin%>
 <%= link_to 'Edit', edit_post_path(@post) %> |

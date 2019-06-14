@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :reports
   resources :geofences
   resources :user_types
+  resources :comments
 
   resources :users do
     resources :posts do

@@ -1,0 +1,12 @@
+<%= form_for([@post, @comment]) do |form| %>
+
+  <div class="card text-white bg-dark mb-3" style="max-width: 32rem;">
+			<div><strong>Text:</strong></div>
+			<%= form.text_area :text, placeholder:"Write your comment here", class:"form-control", rows:3%>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </div>
+<% end %>
