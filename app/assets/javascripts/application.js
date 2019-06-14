@@ -12,12 +12,14 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require turbolinks
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/2/jquery.dataTables.bootstrap
 //= require dataTables/extras/dataTables.responsive
-//= require turbolinks
 //= require_tree .

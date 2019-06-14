@@ -43,7 +43,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Datatables for searchable and paginateable Datatables
-gem 'jquery-datatables-rails'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

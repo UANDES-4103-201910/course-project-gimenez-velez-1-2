@@ -31,18 +31,6 @@
             <%=link_to "Profile", user_path(current_user), class: 'nav-link' %>
         </li>
 
-        <%= form_tag users_path do %>
-        <form class="form-inline my-2 my-lg-0" style="float:left">
-        <% if controller_name == 'users'%>
-          <input class "form-control mr-sm-2" id="searchbar" name= "query" placeholder="User Search" type="text" autocomplete="off" >
-          <link_to user_search_path(search), class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
-        <% else %>
-          <input class "form-control mr-sm-2" id="searchbar" name= "query" placeholder="Other search" type="text" autocomplete="off" >
-          <link_to posts_search_path(search), class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
-        <% end %>
-        </form>
-        <% end %>
-
       </ul>
         <a class="text-muted"> Welcome <%= current_user.name %> <%= current_user.lastname %> &nbsp --> &nbsp </a>
           <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:'logoutLink' %>
