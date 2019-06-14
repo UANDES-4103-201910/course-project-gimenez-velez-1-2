@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @shareda=Tag.where(user_id: @user.id)
     @sharedb=Tag.where(sharer: @user.id)
     @shared=@shareda.to_a.concat(@sharedb)
-    @activities = @upvotes.to_a.concat(@comments.to_a.concat(@shared)).sort_by(&:created_at).reverse!
+    @activities = @upvotes.to_a.concat(@comments.to_a.concat(@shared)).sort_by(&:created_at).reverse!.first(20)
   end
 
   # GET /users/new

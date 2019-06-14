@@ -81,6 +81,26 @@
             <%= render 'liked_posts/form2' %>
             <%= render 'liked_posts/form' %>
           </div>
+          <%= render 'comments/form'%>
+          </div>
+      <div>
+        <div>
+              <button type="button" class="btn text-white bg-dark mb-3">
+                Comments <span id='Comments' class="badge badge-light"><%=@post.comment.count%></span>
+              </button>
+              <button type="button" class="btn text-white bg-dark mb-3">
+                Likes <span id='Upvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:true).count%></span>
+              </button>
+              <button type="button" class="btn text-white bg-dark mb-3">
+                Dislikes <span id='downvotes' class="badge badge-light"><%=@post.liked_posts.where(positive:false).count%></span>
+              </button>
+              <button onclick ="follow()" type="button" class="btn text-white bg-dark mb-3">
+                Shared <span id='follow' class="badge badge-light"><%=@post.tags.count%></span>
+              </button>
+              <button type="button" class="btn text-white bg-dark mb-3">
+                Flags <span id='Flags' class="badge badge-light"><%=@post.report.count%></span>
+              </button>
+              </div>
         </div>
       <% end %>
     </div>
