@@ -10,7 +10,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "letter_opener", :group => :development
 #bootstrap
 gem 'bootstrap', '~> 4.3.1'
-gem 'bootstrap-sass', '~> 3.3.6'
+# gem 'bootstrap-sass', '~> 3.3.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 #devise
